@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>¡Descubre mi segundo nombre!</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #FFEBEE;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            font-size: 2em;
+            color: #FF6F61;
+            margin-bottom: 30px;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+            animation: fadeIn 2s ease-out;
+        }
+
+        .question-box {
+            width: 90%;
+            max-width: 400px;
+            background-color: #FFB6C1;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+            font-size: 1.3em;
+            color: #fff;
+            animation: fadeIn 2s ease-out;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            margin-top: 15px;
+            font-size: 1.2em;
+            border-radius: 10px;
+            border: 1px solid #FF6F61;
+            margin-bottom: 15px;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #FF6F61;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-size: 1.1em;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #FF3B30;
+        }
+
+        .message-box {
+            display: none;
+            font-size: 1.5em;
+            color: #FF6F61;
+            margin-top: 30px;
+            padding: 20px;
+            background-color: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            width: 90%;
+            max-width: 600px;
+            text-align: center;
+            opacity: 0;
+            animation: fadeInMessage 2s forwards;
+        }
+
+        .footer {
+            font-size: 1.1em;
+            color: #555;
+            margin-top: 40px;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeInMessage {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Media Queries for responsiveness */
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 1.8em;
+            }
+
+            .question-box {
+                font-size: 1.2em;
+                padding: 15px;
+            }
+
+            input[type="text"] {
+                font-size: 1.1em;
+            }
+
+            button {
+                font-size: 1em;
+                padding: 8px 18px;
+            }
+
+            .message-box {
+                font-size: 1.3em;
+                padding: 15px;
+            }
+
+            .footer {
+                font-size: 1em;
+            }
+        }
+
+    </style>
+</head>
+<body>
+
+    <h1>a ver responde la pregunta amix xd</h1>
+
+    <div class="question-box" id="question-box">
+        <p>¿Cuál es mi primer nombre?</p>
+        <p>empieza con R y termina con R</p>
+        <input type="text" id="userAnswer" placeholder="Escribe tu respuesta...">
+        <button onclick="checkAnswer()">Enviar</button>
+    </div>
+
+    <div class="message-box" id="message">
+        ¡Gracias por ser tan increíble! Solo quería aprovechar este momento para agradecerte por ser esa persona tan increíble. Me haces reír cuando más lo necesito y siempre estás ahí para apoyarme, y eso no tiene precio. No solo eres una amiga, eres un gran regalo, y me siento muy afortunado de poder contar contigo.
+
+        Gracias por ser como eres, y por siempre hacer que todo sea mejor. ¡Te aprecio mucho más de lo que las palabras pueden expresar! ❤️</p>
+    </div>
+
+    <div class="footer">
+        Con cariño, <br>
+        Tu amix Anderson
+    </div>
+
+    <script>
+        function checkAnswer() {
+            const userAnswer = document.getElementById("userAnswer").value.trim().toLowerCase();
+            const correctAnswer = "rogger";
+
+            if (userAnswer === correctAnswer) {
+                // Eliminar la pregunta y la caja de entrada
+                document.getElementById("question-box").style.display = "none";
+                
+                // Mostrar el mensaje con animación
+                const messageBox = document.getElementById("message");
+                messageBox.style.display = "block";
+            } else {
+                alert("Ups, parece que la respuesta no es correcta. Intenta de nuevo.");
+            }
+        }
+    </script>
+
+</body>
+</html>
